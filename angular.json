@@ -15,6 +15,7 @@
         "@schematics/angular:application": {
           "strict": true
         }
+
       },
       "root": "",
       "sourceRoot": "src",
@@ -34,9 +35,14 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.sass"
+             
+
             ],
-            "scripts": []
+            "scripts": [
+              
+            ]
           },
           "configurations": {
             "production": {
