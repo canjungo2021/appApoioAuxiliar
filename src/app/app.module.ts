@@ -7,6 +7,8 @@ import { PaginaInicialComponent } from './paginaInicial/pagina-inicial.component
 import { PageNotFoundComponent } from './404/page-not-found.component';
 import { SignupComponent } from './signup/signup.component';
 import { UploadComponent } from './upload/upload.component';
+import { AuteService } from './login/aute.service';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -14,13 +16,14 @@ import { UploadComponent } from './upload/upload.component';
     PaginaInicialComponent,
     PageNotFoundComponent,
     SignupComponent,
-    UploadComponent
+    UploadComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [AuteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
