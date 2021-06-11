@@ -1,21 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AuteService } from './login/aute.service';
-import { LoginComponent } from './login/login.component';
-
+import { AutenticacaoService } from './login/servicos/autenticacao.service';
+import {ReactiveFormsModule} from '@angular/forms'
 @NgModule({
   declarations: [
-    AppComponent,
-    LoginComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
-  providers: [AuteService],
+  providers:[AutenticacaoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
