@@ -1,13 +1,18 @@
 import { Injectable } from '@angular/core';
-
+import { HttpClientModule } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
 export class AutenticacaoService {
 
-  constructor() { }
+  constructor(httpserve : HttpClientModule) { }
 
-  fazerLogin(){
 
-  }
+  
+  
+ public fazerLogin(email: string, senha: string){
+
+
+  alert(`E-mail: ${email} e senha: ${senha}`);
+ }
 }

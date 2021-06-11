@@ -4,10 +4,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { AutenticacaoService } from './login/servicos/autenticacao.service';
-import {ReactiveFormsModule} from '@angular/forms'
+import { ReactiveFormsModule } from '@angular/forms'
 
 import { PageNotFoundComponent } from './404/page-not-found.component';
-
+import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/componentes/home/login.component';
 import { FeedComponent } from './paginaInicial/components/feed/components/feed.component';
 import { TurmasComponent } from './paginaInicial/components/turmas/components/turmas.component';
@@ -19,13 +19,12 @@ import { UploadComponent } from './upload/components/upload.component';
   declarations: [
     AppComponent,
     PageNotFoundComponent,
-    LoginComponent,
     /////// ----- Ests compntns vão usar built-in directives ------ ///////
-          FeedComponent, 
-          TurmasComponent,
-          SignupComponent,
-          UploadComponent,
-          LoginComponent
+    FeedComponent,
+    TurmasComponent,
+    SignupComponent,
+    UploadComponent,
+    LoginComponent
     ////// ------ end 
   ],
   imports: [
@@ -33,7 +32,9 @@ import { UploadComponent } from './upload/components/upload.component';
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers:[AutenticacaoService],
+  providers: [AutenticacaoService,
+    HttpClientModule
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

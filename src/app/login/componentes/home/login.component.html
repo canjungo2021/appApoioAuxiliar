@@ -1,21 +1,26 @@
 <div class="container">
-    <div class="row">
-      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-        <div class="card card-signin my-5">
-          <div class="card-body">
-              <p>Bem vindo ao SYSAAP</p>
-            <h5 class="card-title text-center validate">Preencha os seguintes campos</h5>
-              <div class="form-label-group">
-                <input  type="email" id="inputEmail" class="form-control" placeholder="Utilizador" required autofocus> 
-              </div>
-              <hr class="my-4">
-              <div class="form-label-group">   
-                <input  type="password" id="inputPassword" class="form-control validate" placeholder="Palavra passe" required> 
-              </div>
-              <hr class="my-4">
-              <button class="btn btn-lg btn-primary btn-block text-uppercase" name="action" (click) ="fazerLogin()" type="submit">Entrar</button>
+  <div class="row">
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+      <div class="card card-signin my-5">
+        <div class="btn alert-danger text-center" *ngIf="!naoMostrarAviso">
+          <p class="">Nome do utilizador incorrecto</p>
+        </div>
+        <div class="card-body">
+          <p>Bem vindo ao SYSAAP</p>
+          <h5 class="card-title text-center validate">Preencha os seguintes campos</h5>
+          <div class="form-label-group">
+            <input #email type="text" id="inputEmail" class="form-control" placeholder="Utilizador" required autofocus>
           </div>
+          <hr class="my-4">
+          <div class="form-label-group">
+            <input #senha type="password" id="inputPassword" class="form-control validate" placeholder="Palavra passe"
+              required>
+          </div>
+          <hr class="my-4">
+          <button class="btn btn-lg btn-primary btn-block text-uppercase" name="action"
+            (click)="onClick(email.value, senha.value)" type="submit">Entrar</button>
         </div>
       </div>
     </div>
   </div>
+</div>

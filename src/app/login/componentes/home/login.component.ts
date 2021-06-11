@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {FormGroup, FormControl, Validators} from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AutenticacaoService } from '../../servicos/autenticacao.service';
+import { HttpClientModule } from '@angular/common/http';
 import { Utilizador } from '../../classes/utilizador';
+import {regularExpression} from '../../../globalService/regularExpression';
 
 @Component({
   selector: 'app-login',
@@ -11,22 +13,20 @@ import { Utilizador } from '../../classes/utilizador';
 export class LoginComponent implements OnInit {
 
   //loginForm  : FormGroup;
+  naoMostrarAviso : boolean = true;
 
-  constructor() { }
 
+  constructor(public service: AutenticacaoService) {
+
+    service = new AutenticacaoService(service);
+  }
   ngOnInit() {
-    /*
-    this.loginForm = new FormGroup(
-      {
-        username : new FormControl('', [Validators.required, Validators.name]),
-        senha : new FormControl('', [Validators.required, Validators.minLength(6)]),
-      }
-    )
-    */
+
+  }
+  public onClick(email: string, senha: string) {
+    this.naoMostrarAviso = regularExpression(email)
+    if (this.naoMostrarAviso)
+      this.service.fazerLogin(email, senha);
   }
 
-  
-  fazerLogin(){
-   
-  }
 }
